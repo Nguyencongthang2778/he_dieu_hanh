@@ -95,7 +95,7 @@ struct thread
     struct list_elem elem;              /* List element. */
     
      /* code edits */
-     int64_t sleep_ticks;
+     int64_t wakeup_ticks;
         
     /* code ends */
 
@@ -144,7 +144,7 @@ void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
 
-bool cmp_sleep_ticks(const struct list_elem *,
+bool cmp_wakeup_ticks(const struct list_elem *,
 		 const struct list_elem *,
 		 void *aux UNUSED);
 #endif /* threads/thread.h */

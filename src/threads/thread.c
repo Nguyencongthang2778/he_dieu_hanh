@@ -565,14 +565,14 @@ thread_schedule_tail (struct thread *prev)
   /* Compare sleep ticks of two threads */
   
 bool 
-cmp_sleep_ticks(const struct list_elem *a,
+cmp_wakeup_ticks(const struct list_elem *a,
 		 const struct list_elem *b,
 		 void *aux UNUSED)
 
 {
    struct thread *pta = list_entry (a, struct thread, elem);
    struct thread *ptb = list_entry (b, struct thread, elem);
-   return pta->sleep_ticks < ptb->sleep_ticks;
+   return pta->wakeup_ticks < ptb->wakeup_ticks;
 }
   
 /* code ends */
